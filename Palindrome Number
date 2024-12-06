@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read the input number from the user
+        int num = sc.nextInt();
+        
+        // Store the original number to compare later
+        int originalNum = num;
+        
+        // Variable to store the reversed number
+        int reversedNum = 0;
+
+        // Loop to reverse the number
+        while (num != 0) {
+            int digit = num % 10;  // Get the last digit of the number
+            reversedNum = reversedNum * 10 + digit;  // Append the digit to the reversed number
+            num /= 10;  // Remove the last digit from the original number
+        }
+
+        // Compare the original number with the reversed number
+        if (originalNum == reversedNum) {
+            System.out.println(true);  // Print true if the number is a palindrome
+        } else {
+            System.out.println(false);  // Print false if the number is not a palindrome
+        }
+
+    }
+}
